@@ -83,13 +83,13 @@ private:
   static void _configModeCallback(WiFiManager *myWiFiManager);
   static uint16_t _readRegister(uint8_t address, uint8_t reg, uint8_t *data,
                                 uint16_t len);
-  static uint16_t _writeRegister(uint8_t address, uint8_t reg, uint8_t *data,
-                                 uint16_t len);
+  static uint8_t _writeRegister(uint8_t reg_addr, const uint8_t *read_data, uint32_t len,
+                                void* intf_ptr);
 };
 
 extern RTC_DATA_ATTR int guiState;
 extern RTC_DATA_ATTR int menuIndex;
-extern RTC_DATA_ATTR BMA423 sensor;
+//extern RTC_DATA_ATTR BMA423 sensor;
 extern RTC_DATA_ATTR bool WIFI_CONFIGURED;
 extern RTC_DATA_ATTR bool BLE_CONFIGURED;
 
